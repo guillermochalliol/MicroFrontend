@@ -16,7 +16,8 @@ export default function GlobalAuthContextProvider(props){
         signIn,
         signUp,
         passwordReset,
-        logOut, user}
+        logOut, 
+        user}
     return(
         <GlobalAuthContext.Provider value = {authProv}>
             {props.children}

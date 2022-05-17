@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut,} from "firebase/auth";
-import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
+import { getFirestore, doc, query, getDocs, setDoc, getDoc, collection, where, addDoc } from "firebase/firestore";
+
 
 
 // Your web app's Firebase configuration
@@ -32,21 +33,18 @@ const signUp = async (firstName, lastName, email, password) => {
       password
       );
       const user = userCredential.user;
-      const newUser = {
+     
+      await setDoc(doc(db, "users", 1), {
         uid: user.uid,
         firstName,
         lastName,
         authProvider: "local",
         email,
-      }
-      await addDoc(collection(db, "users"), {
-        newUser
       });
-      return newUser;
     } 
-    catch (err) {  
-      console.log(err.message); 
-    };
+    catch (error) {
+        return error
+    }
 };
 
 const signInWithGoogle = async () => {
@@ -63,9 +61,8 @@ const signInWithGoogle = async () => {
           email: user.email,
         });
       }
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
+    } catch (error) {
+        return error
     }
 };
 
@@ -76,37 +73,75 @@ const signIn = async (email, password) => {
     email,
     password
     );
-    const user = userCredential.user;
-    return true
     } catch (error) {
-    return {error: error.message}
+      return error
     }
+   
 };
+const getUser = async (uid) => {
+    try {
+        const q = query(collection(db, "users"), where("uid", "==", uid));
+        const docs = await getDocs(q);
+       let user=docs.docs
+    if (user) {
+        return(user)
+      }
+      else {
+        return("No such document")
+      }
+    } catch (error) {
+        return error
+    }
+   
+};
+
 
 const passwordReset = async (email) => {
     try {
-      await sendPasswordResetEmail(auth, email);
-      alert("Password reset link sent!");
+        await sendPasswordResetEmail(auth, email);
+        return ("Password reset link sent!");
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+        return err;
     }
 };
 
 const logOut = async() => {
     try {
-    await signOut(auth)
-    return true
+        await signOut(auth)
+        return true
     } catch (error) {
-    return false
+        return false
     }
 };
+
+
+function mapAuthCodeToMessage(authCode) {
+  switch (authCode) {
+    case "auth/wrong-password":
+        return "Password provided is not correct";
+    case "auth/invalid-email":
+        return "Email provided is invalid";
+    case "auth/user-not-found":
+        return "Email provided does not correspond to any registered user"
+    case "auth/email-already-in-use":
+        return "Email already exists"
+    case "auth/weak-password":
+        return "Password should be at least 6 characters"
+    default:
+      return "An error has occurred, Please try again";
+  }
+}
+
+
 export {
     auth,
     db,
     signInWithGoogle,
     signIn,
     signUp,
+    getUser,
     passwordReset,
     logOut,
+    signInWithEmailAndPassword,
+    mapAuthCodeToMessage
   };

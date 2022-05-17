@@ -24,7 +24,9 @@ module.exports = {
                 './GlobalAuthContext':
                   './src/context/GlobalAuthContext',
                 './AuthMenu':
-                  '.src/components/AuthMenu'
+                  './src/components/AuthMenu',
+                  './routes':
+                  './src/navigation/routes',
               },
               shared: {
                 ...deps,

@@ -6,18 +6,18 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-var Login;
+var Auth;
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "webpack/container/entry/Login":
+/***/ "webpack/container/entry/Auth":
 /*!***********************!*\
   !*** container entry ***!
   \***********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_emotion_cache_dist_emotion-cache_browser_esm_js\"), __webpack_require__.e(\"vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_firebase_app_dist_index_-07bff9\"), __webpack_require__.e(\"vendors-node_modules_emotion_memoize_dist_emotion-memoize_browser_esm_js-node_modules_mui_ico-515128\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_emotion_react_emotion_react\"), __webpack_require__.e(\"src_App_js-webpack_sharing_consume_default_emotion_styled_emotion_styled-webpack_sharing_cons-afca77\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/App */ \"./src/App.js\")); }; });\n\t},\n\t\"./GlobalAuthContext\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_firebase_app_dist_index_-07bff9\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_context_GlobalAuthContext_js\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/context/GlobalAuthContext */ \"./src/context/GlobalAuthContext.js\")); }; });\n\t}\n};\nvar get = function(module, getScope) {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(function() {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = function(shareScope, initScope) {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: function() { return get; },\n\tinit: function() { return init; }\n});\n\n//# sourceURL=webpack://login/container_entry?");
+eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_emotion_cache_dist_emotion-cache_browser_esm_js\"), __webpack_require__.e(\"vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_firebase_app_dist_index_-07bff9\"), __webpack_require__.e(\"vendors-node_modules_emotion_memoize_dist_emotion-memoize_browser_esm_js-node_modules_mui_mat-93459e\"), __webpack_require__.e(\"vendors-node_modules_mui_icons-material_LockOutlined_js-node_modules_mui_material_Button_Butt-f47c3b\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_emotion_react_emotion_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_emotion_styled_emotion_styled-webpack_sharing_consume_default-fa8ade\"), __webpack_require__.e(\"src_components_Register_js\"), __webpack_require__.e(\"src_App_js\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/App */ \"./src/App.js\")); }; });\n\t},\n\t\"./GlobalAuthContext\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_firebase_app_dist_index_-07bff9\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_context_GlobalAuthContext_js\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/context/GlobalAuthContext */ \"./src/context/GlobalAuthContext.js\")); }; });\n\t},\n\t\"./AuthMenu\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_emotion_cache_dist_emotion-cache_browser_esm_js\"), __webpack_require__.e(\"vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_firebase_app_dist_index_-07bff9\"), __webpack_require__.e(\"vendors-node_modules_emotion_memoize_dist_emotion-memoize_browser_esm_js-node_modules_mui_mat-93459e\"), __webpack_require__.e(\"vendors-node_modules_mui_material_IconButton_IconButton_js-node_modules_mui_material_MenuItem-09dcaf\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_emotion_react_emotion_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_emotion_styled_emotion_styled-webpack_sharing_consume_default-fa8ade\"), __webpack_require__.e(\"src_components_AuthMenu_js\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/components/AuthMenu */ \"./src/components/AuthMenu.js\")); }; });\n\t},\n\t\"./routes\": function() {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_navigation_routes_js\")]).then(function() { return function() { return (__webpack_require__(/*! ./src/navigation/routes */ \"./src/navigation/routes.js\")); }; });\n\t}\n};\nvar get = function(module, getScope) {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(function() {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = function(shareScope, initScope) {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: function() { return get; },\n\tinit: function() { return init; }\n});\n\n//# sourceURL=webpack://auth/container_entry?");
 
 /***/ })
 
@@ -123,7 +123,7 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 	/* webpack/runtime/load script */
 /******/ 	!function() {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "login:";
+/******/ 		var dataWebpackPrefix = "auth:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = function(url, done, key, chunkId) {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -205,7 +205,7 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 			// runs all init snippets from all modules reachable
 /******/ 			var scope = __webpack_require__.S[name];
 /******/ 			var warn = function(msg) { return typeof console !== "undefined" && console.warn && console.warn(msg); };
-/******/ 			var uniqueName = "login";
+/******/ 			var uniqueName = "auth";
 /******/ 			var register = function(name, version, factory, eager) {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -398,8 +398,8 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 			"webpack/sharing/consume/default/@emotion/react/@emotion/react": function() { return loadStrictVersionCheckFallback("default", "@emotion/react", [1,11,9,0], function() { return Promise.all([__webpack_require__.e("vendors-node_modules_emotion_cache_dist_emotion-cache_browser_esm_js"), __webpack_require__.e("vendors-node_modules_emotion_serialize_dist_emotion-serialize_browser_esm_js-node_modules_emo-000f10"), __webpack_require__.e("vendors-node_modules_emotion_react_dist_emotion-react_browser_esm_js")]).then(function() { return function() { return __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js"); }; }); }); },
 /******/ 			"webpack/sharing/consume/default/react-router/react-router": function() { return loadStrictVersionCheckFallback("default", "react-router", [1,6,3,0], function() { return __webpack_require__.e("vendors-node_modules_react-router_index_js").then(function() { return function() { return __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js"); }; }); }); },
 /******/ 			"webpack/sharing/consume/default/react-router-dom/react-router-dom": function() { return loadStrictVersionCheckFallback("default", "react-router-dom", [1,6,3,0], function() { return Promise.all([__webpack_require__.e("vendors-node_modules_history_index_js"), __webpack_require__.e("vendors-node_modules_react-router-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react-router_react-router")]).then(function() { return function() { return __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js"); }; }); }); },
-/******/ 			"webpack/sharing/consume/default/@emotion/styled/@emotion/styled": function() { return loadStrictVersionCheckFallback("default", "@emotion/styled", [1,11,8,1], function() { return Promise.all([__webpack_require__.e("vendors-node_modules_emotion_serialize_dist_emotion-serialize_browser_esm_js-node_modules_emo-000f10"), __webpack_require__.e("vendors-node_modules_emotion_styled_dist_emotion-styled_browser_esm_js")]).then(function() { return function() { return __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js"); }; }); }); },
-/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": function() { return loadSingletonVersionCheckFallback("default", "react-dom", [1,18,0,0], function() { return __webpack_require__.e("vendors-node_modules_react-dom_index_js").then(function() { return function() { return __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"); }; }); }); }
+/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": function() { return loadSingletonVersionCheckFallback("default", "react-dom", [1,18,0,0], function() { return __webpack_require__.e("vendors-node_modules_react-dom_index_js").then(function() { return function() { return __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"); }; }); }); },
+/******/ 			"webpack/sharing/consume/default/@emotion/styled/@emotion/styled": function() { return loadStrictVersionCheckFallback("default", "@emotion/styled", [1,11,8,1], function() { return Promise.all([__webpack_require__.e("vendors-node_modules_emotion_serialize_dist_emotion-serialize_browser_esm_js-node_modules_emo-000f10"), __webpack_require__.e("vendors-node_modules_emotion_styled_dist_emotion-styled_browser_esm_js")]).then(function() { return function() { return __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js"); }; }); }); }
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -412,10 +412,10 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 			"webpack_sharing_consume_default_react-router_react-router": [
 /******/ 				"webpack/sharing/consume/default/react-router/react-router"
 /******/ 			],
-/******/ 			"src_App_js-webpack_sharing_consume_default_emotion_styled_emotion_styled-webpack_sharing_cons-afca77": [
+/******/ 			"webpack_sharing_consume_default_emotion_styled_emotion_styled-webpack_sharing_consume_default-fa8ade": [
 /******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom",
-/******/ 				"webpack/sharing/consume/default/@emotion/styled/@emotion/styled",
-/******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
+/******/ 				"webpack/sharing/consume/default/react-dom/react-dom",
+/******/ 				"webpack/sharing/consume/default/@emotion/styled/@emotion/styled"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = function(chunkId, promises) {
@@ -455,7 +455,7 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"Login": 0
+/******/ 			"Auth": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = function(chunkId, promises) {
@@ -467,7 +467,7 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_sharing_consume_default_(react(\-router_react\-router|_react)|emotion_react_emotion_react)$/.test(chunkId)) {
+/******/ 						if(!/^webpack_sharing_consume_default_(emotion_(react_emotion_react|styled_emotion_styled\-webpack_sharing_consume_default\-fa8ade)|react(\-router_react\-router|_react))$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -534,7 +534,7 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunklogin"] = self["webpackChunklogin"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkauth"] = self["webpackChunkauth"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();
@@ -544,8 +544,8 @@ eval("var moduleMap = {\n\t\"./App\": function() {\n\t\treturn Promise.all([__we
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/Login");
-/******/ 	Login = __webpack_exports__;
+/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/Auth");
+/******/ 	Auth = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
