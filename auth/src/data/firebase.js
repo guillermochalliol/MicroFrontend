@@ -2,19 +2,20 @@
 import { initializeApp } from "firebase/app";
 import {GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut,} from "firebase/auth";
 import { getFirestore, doc, query, getDocs, setDoc, getDoc, collection, where, addDoc } from "firebase/firestore";
-
+import {keys} from "../constants/firebaseConfig"
 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBQqYuOt_s8C1AyRIPF5ZaPQXMqX_MwEPU",
-  authDomain: "auth-api-9da58.firebaseapp.com",
-  databaseURL: "https://auth-api-9da58-default-rtdb.firebaseio.com",
-  projectId: "auth-api-9da58",
-  storageBucket: "auth-api-9da58.appspot.com",
-  messagingSenderId: "660490876617",
-  appId: "1:660490876617:web:07c6bc84757f7fbb9c7f18"
+  apiKey:keys.APIKEY,
+  authDomain:keys.AUTHDOMAIN,
+  databaseURL:keys.DATABASEURL,
+  projectId:keys.PROJECTID,
+  storageBucket:keys.STORAGEBUCKET,
+  messagingSenderId:keys.MESSAGINGSENDERID,
+  appId:keys.APPID
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -20,7 +20,7 @@ body {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,6 +36,12 @@ body {
           justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+@media (max-width: 600px) {
+  .App-header {
+    min-height: calc(100vh - 56px);
+  }
 }
 
 .App-link {
@@ -63,3 +69,4 @@ body {
             transform: rotate(360deg);
   }
 }
+/*# sourceMappingURL=App.css.map */

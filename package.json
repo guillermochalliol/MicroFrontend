@@ -3,10 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "npm-run-all --parallel serve:auth serve:main serve:student-resources ",
+		"start": "npm-run-all --parallel serve:auth serve:main serve:resources ",
 		"serve:auth": "cd auth && webpack serve",
 		"serve:main": "cd main &&  webpack serve",
-		"serve:student-resources": "cd student-resources &&  webpack serve"
+		"serve:resources": "cd resources &&  webpack serve"
 	
 	},
   "devDependencies": {

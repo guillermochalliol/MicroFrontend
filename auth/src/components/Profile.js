@@ -1,4 +1,6 @@
 import React from 'react'
+import '../App.scss';
+
 import { auth, getUser } from "../data/firebase"; 
 
 function Profile() {
@@ -7,13 +9,14 @@ function Profile() {
     React.useEffect(() => {
         auth.onAuthStateChanged(setUser);
     })
-   console.log(user.uid)
     getUser(user.uid).then(userProfile => {
-        console.log (userProfile)
      })
      
   return (
-    <div>Profile</div>
+    <div className="Profile">
+      <h2>Profile</h2>
+      <p>Need to work on thath</p>
+      </div>
   )
 }
 
