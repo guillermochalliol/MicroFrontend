@@ -15,4 +15,6 @@ cd..
 
 cd resources && npm install
 
+cd ..
+
 npm start
