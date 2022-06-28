@@ -14,7 +14,7 @@ module.exports = {
         }),
         new ModuleFederationPlugin(
             {
-              name: 'StudentResources',
+              name: 'Resources',
               filename:
                 'remoteEntry.js',
               exposes: {

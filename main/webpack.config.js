@@ -17,7 +17,7 @@ module.exports = {
           'remoteEntry.js',
         remotes: {
           Auth:'Auth@http://localhost:8001/remoteEntry.js',
-          StudentResources: 'StudentResources@http://localhost:8002/remoteEntry.js'
+          Resources: 'Resources@http://localhost:8002/remoteEntry.js'
         },
         shared: {
           ...deps,

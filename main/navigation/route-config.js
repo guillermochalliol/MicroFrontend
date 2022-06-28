@@ -3,8 +3,8 @@ import Spinner from "../src/components/Spinner";
 import Home from '../src/components/Home.js';
 
   
-const StudentResources = lazy(
-    () => import('StudentResources/App')
+const Resources = lazy(
+    () => import('Resources/App')
   );
 
 
@@ -19,13 +19,13 @@ const routes = {
 			</Suspense>
 		)
 	},
-	StudentResources: {
+	Resources: {
         id:3,
-		url: "student-resources",
+		url: "resources",
 		label: "Resources",
 		component: (
 			<Suspense fallback={<Spinner/>}>
-				<StudentResources />
+				<Resources />
 			</Suspense>
 		)
 	}
