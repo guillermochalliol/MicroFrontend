@@ -15,7 +15,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import  cssStyles from '../styles/formStyles.js'
 // Firebase
-import { auth, signUp, mapAuthCodeToMessage } from "../data/firebase";
+import { auth, signUp, mapAuthCodeToMessage, getUser } from "../data/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 //Spinner
@@ -32,6 +32,7 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [confirmPassword,setConfirmPassword] = useState("");
+    const [newsletter, setNewsletter] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
@@ -39,7 +40,6 @@ function Register() {
 
 
     const  handleInputChange = (event) => {
-        event.preventDefault();
         const {id , value} = event.target;
         
         if(id === "firstName"){
@@ -54,8 +54,11 @@ function Register() {
         if(id === "password"){
             setPassword(value);
         }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
+        if (id === "confirmPassword") {
+          setConfirmPassword(value);
+        }
+        if (id === "newsletter") {
+          setNewsletter(event.target.checked);
         }
     };
 
@@ -63,14 +66,17 @@ function Register() {
         e.preventDefault();
 
         if(password === confirmPassword){  
-          signUp(firstName, lastName, email, password).then(err => {
-            console.log(err)
-            setErrorMessage(mapAuthCodeToMessage(err.code));
+          signUp(firstName, lastName, email, password, newsletter).then(err => {
+            if(err){
+              console.log(err)
+              setErrorMessage(mapAuthCodeToMessage(err.code));
+            }
          })
         }else{
           setErrorMessage('password mismatch')
         }
     }
+    
     useEffect(() => {
         if (user){
             navigate("/");
@@ -188,10 +194,17 @@ return (<>
 
                 </Grid>
                 <Grid item xs={12}>
-                  <FormControlLabel
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label="I want to receive inspiration, marketing promotions and updates via email."
-                  />
+                    <FormControlLabel
+                      control={<Checkbox
+                        checked={newsletter}
+                        color="primary"
+                        id="newsletter"
+                        onChange={(e) => handleInputChange(e)}
+                        
+                      />}
+                      label="I want to receive inspiration, marketing promotions and updates via email."
+                    />
+                    
                 </Grid>
                 <Grid item xs={12}>
                   <Typography component="p" variant="caption"  sx={{color:'red'}}>

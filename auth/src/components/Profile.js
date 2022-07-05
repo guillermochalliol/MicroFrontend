@@ -10,8 +10,9 @@ function Profile() {
         auth.onAuthStateChanged(setUser);
     })
     getUser(user.uid).then(userProfile => {
+      console.log(userProfile,user.uid)
      })
-     
+  
   return (
     <div className="Profile">
       <h2>Profile</h2>

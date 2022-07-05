@@ -25,8 +25,8 @@ const googleProvider = new GoogleAuthProvider();
 
 // Auth Functions
 
-const signUp = async (firstName, lastName, email, password) => {
-    
+const signUp = async (firstName, lastName, email, password, newsletter) => {
+  
     try {
       const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -34,13 +34,13 @@ const signUp = async (firstName, lastName, email, password) => {
       password
       );
       const user = userCredential.user;
-     
-      await setDoc(doc(db, "users", 1), {
+      await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         firstName,
         lastName,
         authProvider: "local",
         email,
+        newsletter
       });
     } 
     catch (error) {
@@ -81,9 +81,8 @@ const signIn = async (email, password) => {
 };
 const getUser = async (uid) => {
     try {
-        const q = query(collection(db, "users"), where("uid", "==", uid));
-        const docs = await getDocs(q);
-       let user=docs.docs
+      const q = query(collection(db, "users"), where("uid", "==", uid));
+      const user = await getDocs(q);
     if (user) {
         return(user)
       }
